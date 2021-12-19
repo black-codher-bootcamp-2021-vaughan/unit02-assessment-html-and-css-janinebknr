@@ -132,6 +132,87 @@ p.dates { margin-bottom: 5px; }
 p.company-name { margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
 .edu-institute { color: #fff; }
 
+/*==================================
+    TIMELINE
+==================================*/
+
+    /*-- GENERAL STYLES
+    ------------------------------*/
+    .timeline {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    /*----- TIMELINE ITEM -----*/
+
+    .timeline-item {
+        padding-left: 40px;
+        position: relative;
+    }
+    .timeline-item:last-child {
+        padding-bottom: 0;
+    }
+
+    /*----- TIMELINE INFO -----*/
+
+    .timeline-info {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin: 0 0 .5em 0;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+    /*----- TIMELINE MARKER -----*/
+
+    .timeline-marker {
+        position: absolute;
+        top: 0; bottom: 0; left: 0;
+        width: 15px;
+    }
+    .timeline-marker:before {
+        background: var(--orange);
+        border: 3px solid transparent;
+        border-radius: 100%;
+        content: "";
+        display: block;
+        height: 15px;
+        position: absolute;
+        top: 4px; left: 0;
+        width: 15px;
+        transition: background 0.3s ease-in-out,
+                border 0.3s ease-in-out;
+    }
+    .timeline-marker:after {
+        content: "";
+        width: 3px;
+        background: var(--body-grey);
+        display: block;
+        position: absolute;
+        top: 24px; bottom: 0; left: 9px;
+    }
+    .timeline-item:last-child .timeline-marker:after {
+        content: none;
+    }
+    
+    .timeline-item:not(.period):hover .timeline-marker:before {
+        background: transparent;
+        border: 3px solid var(--orange);
+    }
+
+    /*----- TIMELINE CONTENT -----*/
+
+    .timeline-content {
+        padding-bottom: 40px;
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+
+
 /*------------------------------------------------------------------------------------------------------------------------------
 	
 FOOTER
